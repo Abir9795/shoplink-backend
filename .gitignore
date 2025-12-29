@@ -1,0 +1,13 @@
+# Dependency directories
+node_modules/
+
+# Environment variables (Safety first!)
+.env
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Executables
+*.exe
+*.log
