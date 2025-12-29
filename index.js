@@ -17,7 +17,9 @@ const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN || "PASTE_YOUR_LONG_TOKE
 const VERIFY_TOKEN = process.env.VERIFY_TOKEN || "my_secret_password_123";
 
 // --- DATABASE CONNECTION ---
-mongoose.connect('mongodb://127.0.0.1:27017/shoplink_db')
+//mongoose.connect('mongodb://127.0.0.1:27017/shoplink_db')
+// This tells the app: "Use the Cloud DB if available, otherwise use Local DB"
+mongoose.connect(process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/shoplink_db')
   .then(() => console.log('✅ MongoDB Connected!'))
   .catch(err => console.error('❌ MongoDB Connection Error:', err));
 // --------------------------------
